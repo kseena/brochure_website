@@ -1,0 +1,56 @@
+.mainPage { 
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #1d1135 0%, #2b1055 40%, #751052 75%, #b11d61 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.mainPage::before,
+.mainPage::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+}
+
+.mainPage::before {
+  width: 2px;
+  height: 2px;
+  box-shadow: 
+    15vw 10vh 0px 0px rgba(255, 255, 255, 0.9),
+    40vw 15vh 0px 0px rgba(255, 255, 255, 1),
+    75vw 8vh  0px 0px rgba(255, 255, 255, 0.8),
+    92vw 18vh 0px 0px rgba(255, 255, 255, 0.9),
+    50vw 42vh 1px 0px rgba(255, 255, 255, 0.7),
+    33vw 28vh 1px 0px rgba(255, 255, 255, 1);
+  
+  animation: twinkleFirst 4s infinite ease-in-out;
+}
+
+.mainPage::after {
+  width: 1px;
+  height: 1px;
+  box-shadow: 
+    25vw 35vh 0px 0px rgba(255, 255, 255, 0.6),
+    60vw 25vh 0px 0px rgba(255, 255, 255, 0.5),
+    85vw 30vh 0px 0px rgba(255, 255, 255, 0.7),
+    5vw  45vh 0px 0px rgba(255, 255, 255, 0.4),
+    68vw 48vh 0px 0px rgba(255, 255, 255, 0.6),
+    80vw 50vh 0px 0px rgba(255, 255, 255, 0.5);
+
+  animation: twinkleSecond 6s infinite ease-in-out;
+}
+
+@keyframes twinkleFirst {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes twinkleSecond {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.2; }
+}

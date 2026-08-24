@@ -1,0 +1,25 @@
+{
+  "rules": {
+    "react-refresh/only-export-components": [
+      "warn",
+      { "allowConstantExport": true }
+    ],
+    "no-multiple-empty-lines": [
+      "warn", 
+      { "max": 2, "maxEOF": 1, "maxBOF": 0 }
+    ],
+    "indent": [
+      "warn", 
+      2, 
+      { "SwitchCase": 1 }
+    ],
+    "object-curly-spacing": [
+      "warn", 
+      "always"
+    ],
+    "keyword-spacing": [
+      "warn", 
+      { "before": true, "after": true }
+    ]
+  }
+}

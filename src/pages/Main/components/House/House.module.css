@@ -1,0 +1,338 @@
+.building {
+  position: sticky;
+  top: 20px;
+  align-self: center;
+  position: relative;
+
+  aspect-ratio: 1220 / 864;
+
+  background-image: url('assets/house-bg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height: 90vh;
+  height: 90dvh;
+
+  width: auto;
+  max-width: 90vw;
+  max-height: 864px;
+
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .building {
+    height: 65vh;
+    width: auto;
+    max-height: 500px;
+  }
+
+  .floor {
+    padding: 0 4% !important;
+  }
+
+  .floor div,
+  .firstFloor div,
+  .roof div {
+    font-size: 11px !important;
+    max-width: 80px !important;
+  }
+}
+
+.rooms {
+  position: absolute;
+
+  top: 14.5%;
+  left: 14.8%;
+
+  width: 70.4%;
+  height: 85.5%;
+
+  pointer-events: none;
+}
+
+.roof,
+.fourthFloor,
+.tirdFloor,
+.secondFloor,
+.firstFloor {
+  position: absolute;
+
+  display: grid;
+
+  box-sizing: border-box;
+
+  background: transparent;
+  border: none;
+
+  pointer-events: none;
+}
+
+.fourthFloor {
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 26%;
+
+  padding-left: 6%;
+  padding-right: 3%;
+
+  grid-template-columns: 50% 50%;
+}
+
+.tirdFloor {
+  top: 26%;
+  left: 0;
+
+  width: 100%;
+  height: 25.5%;
+
+  grid-template-columns: 37% 30% 33%;
+}
+
+.secondFloor {
+  top: 51.5%;
+  left: 0;
+
+  width: 100%;
+  height: 24%;
+
+  grid-template-columns: 44% 56%;
+}
+
+.firstFloor {
+  top: 75.5%;
+  left: 0;
+
+  width: 100%;
+  height: 24.5%;
+
+  grid-template-columns: 44% 56%;
+}
+
+.fourthFloor > div,
+.tirdFloor > div,
+.secondFloor > div,
+.firstFloor > div {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: auto;
+
+  cursor: pointer;
+
+  color: transparent;
+
+  text-shadow: none;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.fourthFloor > div:hover,
+.tirdFloor > div:hover,
+.secondFloor > div:hover,
+.firstFloor > div:hover {
+  color: #ffffff;
+
+  background: rgba(255, 153, 204, 0.10);
+
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.9),
+    0 2px 6px rgba(0, 0, 0, 0.9);
+
+  z-index: 2;
+}
+
+.aboutMeRoom {
+  position: relative;
+  overflow: hidden;
+}
+
+.girlCharacter {
+  position: absolute;
+  
+  bottom: 5%;         
+  right: 10%;        
+  width: 32%;        
+  height: 60%;        
+
+  background-size: contain;     
+  background-repeat: no-repeat; 
+  background-position: bottom center; 
+
+animation: techFloat 6.0s ease-in-out infinite;
+}
+
+.aboutMeRoom:hover .girlCharacter {
+  opacity: 0.7;
+  transform: scale(1);
+}
+
+/* =========================================
+   TECH STACK
+   ========================================= */
+
+.techRoom {
+  position: relative;
+  overflow: hidden;
+}
+
+.techIcons {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.techIcon {
+  position: absolute;
+
+  width: clamp(20px, 2.2vw, 25px);
+  height: clamp(20px, 2.2vw, 25px);
+
+  animation: techFloat 2.5s ease-in-out infinite;
+  opacity: 1;
+
+  filter:
+    drop-shadow(0 0 0.px currentColor)
+    drop-shadow(0 0 0.2px currentColor);
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.techRoom:hover .techIcons {
+  opacity: 0.6;
+  transform: scale(1);
+}
+
+.techIcon:nth-child(1) {
+  left: 18%;
+  top: 24%;
+}
+
+.techIcon:nth-child(2) {
+  left: 40%;
+  top: 24%;
+}
+
+.techIcon:nth-child(3) {
+  left: 60%;
+  top: 24%;
+}
+
+.techIcon:nth-child(4) {
+  left: 24%;
+  top: 43%;
+}
+
+.techIcon:nth-child(5) {
+  left: 47%;
+  top: 43%;
+}
+
+.techIcon:nth-child(6) {
+  left: 70%;
+  top: 43%;
+}
+
+.techIcon:nth-child(7) {
+  left: 32%;
+  top: 61%;
+}
+
+.techIcon:nth-child(8) {
+  left: 54%;
+  top: 61%;
+}
+
+.techIcon:nth-child(9) {
+  left: 76%;
+  top: 61%;
+}
+
+/* Анимация */
+
+@keyframes techFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+
+/* Цвета технологий */
+
+.reactIcon {
+  color: #61dafb;
+}
+
+.typescriptIcon {
+  color: #3178c6;
+}
+
+.javascriptIcon {
+  color: #f7df1e;
+}
+
+.pythonIcon {
+  color: #3776ab;
+}
+
+.nodeIcon {
+  color: #68a063;
+}
+
+.gitIcon {
+  color: #f05032;
+}
+
+.dockerIcon {
+  color: #2496ed;
+}
+
+.htmlIcon {
+  color: #e34f26;
+}
+
+.cssIcon {
+  color: #1572b6;
+}
+
+
+/* =========================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+   ========================================= */
+
+@media (max-width: 768px) {
+  .techIcons {
+    inset: 5%;
+
+    gap: 5px;
+  }
+
+  .techIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
